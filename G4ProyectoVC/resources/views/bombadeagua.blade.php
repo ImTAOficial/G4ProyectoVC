@@ -148,9 +148,9 @@
                 <div class="container-fluid px-4">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h1 class="mt-4">Modulo - Empleados</h1>
+                            <h1 class="mt-4">Modulo - Bombas de agua</h1>
                             <ol class="breadcrumb mb-4">
-                                <li class="breadcrumb-item active">Registro de empleados</li>
+                                <li class="breadcrumb-item active">Registro de bombas de agua</li>
                             </ol>
                         </div>
                         <div>
@@ -160,7 +160,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-user-tie me-1"></i>
-                                Formulario empleado
+                                Formulario de bombas de agua
                             </div>
                             <div class="card-body">
                                 @if(session('success'))
