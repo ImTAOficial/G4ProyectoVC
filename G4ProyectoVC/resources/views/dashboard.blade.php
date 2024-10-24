@@ -59,15 +59,18 @@
                                 Cultivos
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <div class="collapse" id="collapseCultivos" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Viñedos</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Enfermedad</a>
-                                    <a class="nav-link" href="layout-static.html">Parcelas</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Bomba de Agua</a>
-                                    <a class="nav-link" href="layout-static.html">Sensores</a>
-                                </nav>
-                            </div>
+
+
+<div class="collapse" id="collapseCultivos" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+    <nav class="sb-sidenav-menu-nested nav">
+        <a class="nav-link" href="{{ route('vinedo') }}">Viñedos</a>
+        <a class="nav-link" href="{{ route('enfermedad') }}">Enfermedad</a>
+        <a class="nav-link" href="{{ route('parcelas') }}">Parcelas</a>
+        <a class="nav-link" href="{{ route('bombadeagua') }}">Bomba de Agua</a>
+        <a class="nav-link" href="{{ route('sensores') }}">Sensores</a>
+    </nav>
+</div>
+
 
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseProcesos" aria-expanded="false" aria-controls="collapseProcesos">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>

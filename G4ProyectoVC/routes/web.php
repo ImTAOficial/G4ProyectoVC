@@ -12,10 +12,8 @@ Route::get('/', function () {
 
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
-
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
-
 Route::get('password/request', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 
@@ -40,5 +38,28 @@ Route::get('registroempleado', function () {
 // Ruta para crear un empleado
 Route::post('empleado/crear', [EmpleadoController::class, 'store'])->name('empleado.crear');
 
+// Ruta para crear un viñedo
+Route::get('vinedo', function () {
+    return view('vinedo');
+})->name('vinedo');
 
+// Ruta para crear una enfermedad
+Route::get('enfermedad', function () {
+    return view('enfermedad');
+})->name('enfermedad');
+
+// Ruta para crear una parcelas
+Route::get('parcelas', function () {
+    return view('parcelas');
+})->name('parcelas');
+
+// Ruta para crear una bomba dde agua
+Route::get('bombadeagua', function () {
+    return view('bombadeagua');
+})->name('bombadeagua');
+
+// Ruta para crear un sensor
+Route::get('sensores', function () {
+    return view('sensores');
+})->name('sensores');
 
