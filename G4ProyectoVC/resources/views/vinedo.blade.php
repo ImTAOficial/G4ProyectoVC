@@ -10,18 +10,6 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!--usados como plugins para crear listas desplegables-->
-            <!-- Select2 CSS -->
-            <!--<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />-->
-            <!-- Select2 JS -->
-            <!--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>-->
-            <!-- Bootstrap CSS -->
-            <!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />-->
-            <!-- jQuery (necesario para Select2) -->
-            <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
-            <!-- Bootstrap JS -->
-            <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
-
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -101,7 +89,6 @@
                                     <a class="nav-link" href="layout-static.html">Datos financieros</a>
                                 </nav>
                             </div>
-
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Empleados
@@ -169,8 +156,6 @@
                             <a href="{{ route('dashboard') }}" class="btn btn-primary mt-4">Regresar</a>
                         </div>
                     </div>
-
-
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-leaf me-1"></i>
@@ -197,15 +182,15 @@
                                         <input class="form-control" id="NombreVinedo" name="NombreVinedo" type="text" placeholder="Nombre del Viñedo" required />
                                         <label for="NombreVinedo">Nombre del Viñedo</label>
                                     </div>                                  
-            <div class="form-floating mb-3">
-                <select class="form-control" id="ID_Parcela" name="ID_Parcela" required>
-                    <option value="" disabled selected>Selecciona una parcela</option>
-                    @foreach($parcelas as $parcela)
-                        <option value="{{ $parcela->ID_Parcela }}">{{ $parcela->NombreParcela }}</option>
-                    @endforeach
-                </select>
-                <label for="ID_Parcela">Nombre de la Parcela</label>
-            </div>
+                                    <div class="form-floating mb-3">
+                                        <select class="form-control" id="ID_Parcela" name="ID_Parcela" required>
+                                            <option value="" disabled selected>Selecciona una parcela</option>
+                                            @foreach($parcelas as $parcela)
+                                                <option value="{{ $parcela->ID_Parcela }}">{{ $parcela->NombreParcela }}</option>
+                                            @endforeach
+                                        </select>
+                                        <label for="ID_Parcela">Nombre de la Parcela</label>
+                                    </div>
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="Variedad_Uva" name="Variedad_Uva" type="text" placeholder="Variedad de Uva" required />
                                         <label for="Variedad_Uva">Variedad de Uva</label>
@@ -218,8 +203,6 @@
                                         <input class="form-control" id="RiegoVinedo" name="RiegoVinedo" type="number" placeholder="Riego del Viñedo" required />
                                         <label for="RiegoVinedo">Riego del Viñedo</label>
                                     </div>
-
-                                    
                                     <div class="form-floating mb-3">
                                         <select class="form-control" id="ID_Enfermedad" name="ID_Enfermedad" required>
                                             <option value="" disabled selected>Selecciona una enfermedad</option>
@@ -229,8 +212,6 @@
                                         </select>
                                         <label for="ID_Enfermedad">Enfermedad</label>
                                     </div>
-
-
                                     <div class="form-floating mb-3">
                                         <input class="form-control" id="Estado_Sanitario" name="Estado_Sanitario" type="text" placeholder="Estado Sanitario" required />
                                         <label for="Estado_Sanitario">Estado Sanitario</label>
@@ -247,18 +228,6 @@
                                 </form>
                             </div>
                         </div>
-
-                    <!-- Select2 Initialization -->
-                    <!--<script>
-                        $(document).ready(function() {
-                            $('.select2').select2({
-                                placeholder: 'Selecciona una o varias enfermedades',
-                                allowClear: true
-                            });
-                        });
-                    </script>-->
-
-
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
