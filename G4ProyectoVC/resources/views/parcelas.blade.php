@@ -157,64 +157,66 @@
                             <a href="{{ route('dashboard') }}" class="btn btn-primary mt-4">Regresar</a>
                         </div>
                     </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-user-tie me-1"></i>
-                                Formulario parcelas
-                            </div>
-                            <div class="card-body">
-                                @if(session('success'))
-                                    <div class="alert alert-success">
-                                        {{ session('success') }}
-                                    </div>
-                                @endif
-                                @if($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
-                                <form method="POST" action="{{ route('empleado.crear') }}">
-                                    @csrf
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="NombreEmpleado" name="NombreEmpleado" type="text" placeholder="Nombre" required />
-                                        <label for="NombreEmpleado">Nombre</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="ApellidoEmpleado" name="ApellidoEmpleado" type="text" placeholder="Apellido" required />
-                                        <label for="ApellidoEmpleado">Apellido</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="Fecha_ContratacionEmpleado" name="Fecha_ContratacionEmpleado" type="date" placeholder="Fecha de Contratación" required />
-                                        <label for="Fecha_ContratacionEmpleado">Fecha de Contratación</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="PuestoEmpleado" name="PuestoEmpleado" type="text" placeholder="Puesto" required />
-                                        <label for="PuestoEmpleado">Puesto</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="EmailEmpleado" name="EmailEmpleado" type="email" placeholder="Email" required />
-                                        <label for="EmailEmpleado">Email</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="TelefonoEmpleado" name="TelefonoEmpleado" type="tel" placeholder="Teléfono" required />
-                                        <label for="TelefonoEmpleado">Teléfono</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="Password_Empleado" name="Password_Empleado" type="password" placeholder="Contraseña" required />
-                                        <label for="Password_Empleado">Contraseña</label>
-                                    </div>
-                                    <button class="btn btn-primary" type="submit">Crear Empleado</button>
-                                </form>
-                            </div>
+                        
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-map-marker-alt me-1"></i>
+                            Formulario parcelas
                         </div>
+                        <div class="card-body">
+                            @if(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+                            @if($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <form method="POST" action="{{ route('parcela.crear') }}">
+                                @csrf
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="NombreParcela" name="NombreParcela" type="text" placeholder="Nombre de la Parcela" required />
+                                    <label for="NombreParcela">Nombre de la Parcela</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="UbicacionParcela" name="UbicacionParcela" type="text" placeholder="Ubicación de la Parcela" required />
+                                    <label for="UbicacionParcela">Ubicación de la Parcela</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="AreaParcela" name="AreaParcela" type="number" step="0.01" placeholder="Área de la Parcela" required />
+                                    <label for="AreaParcela">Área de la Parcela</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="DimensionParcela" name="DimensionParcela" type="text" placeholder="Dimensiones de la Parcela" required />
+                                    <label for="DimensionParcela">Dimensiones de la Parcela</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="Tipo_SueloParcela" name="Tipo_SueloParcela" type="text" placeholder="Tipo de Suelo de la Parcela" required />
+                                    <label for="Tipo_SueloParcela">Tipo de Suelo de la Parcela</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="Fecha_AdquisicionParcela" name="Fecha_AdquisicionParcela" type="date" placeholder="Fecha de Adquisición de la Parcela" required />
+                                    <label for="Fecha_AdquisicionParcela">Fecha de Adquisición de la Parcela</label>
+                                </div>
+                                <button class="btn btn-primary" type="submit">Crear Parcela</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Detalle empleados registrados
+                                Detalle de parcelas
                             </div>
                             <div class="card-body">
                                 <table id="empleadoTable" class="table table-striped">
@@ -222,11 +224,11 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Fecha de Contratación</th>
-                                            <th>Puesto</th>
-                                            <th>Email</th>
-                                            <th>Teléfono</th>
+                                            <th>Ubicacion</th>
+                                            <th>Area</th>
+                                            <th>Dimenciones</th>
+                                            <th>Tipo de suelo</th>
+                                            <th>Fecha de adquisicion</th>
                                         </tr>
                                     </thead>
                                     <tbody>

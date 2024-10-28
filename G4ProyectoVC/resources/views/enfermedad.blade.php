@@ -159,7 +159,7 @@
                     </div>
                         <div class="card mb-4">
                             <div class="card-header">
-                                <i class="fas fa-user-tie me-1"></i>
+                                <i class="fas fa-bug me-1"></i>
                                 Formulario enfermedades
                             </div>
                             <div class="card-body">
@@ -177,44 +177,31 @@
                                         </ul>
                                     </div>
                                 @endif
-                                <form method="POST" action="{{ route('empleado.crear') }}">
+                                <form method="POST" action="{{ route('enfermedad.crear') }}">
                                     @csrf
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="NombreEmpleado" name="NombreEmpleado" type="text" placeholder="Nombre" required />
-                                        <label for="NombreEmpleado">Nombre</label>
+                                        <input class="form-control" id="Nombre_Enfermedad" name="Nombre_Enfermedad" type="text" placeholder="Nombre de la Enfermedad" required />
+                                        <label for="Nombre_Enfermedad">Nombre de la Enfermedad</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="ApellidoEmpleado" name="ApellidoEmpleado" type="text" placeholder="Apellido" required />
-                                        <label for="ApellidoEmpleado">Apellido</label>
+                                        <textarea class="form-control" id="Descripcion_Enfermedad" name="Descripcion_Enfermedad" placeholder="Descripción de la Enfermedad"></textarea>
+                                        <label for="Descripcion_Enfermedad">Descripción de la Enfermedad</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="Fecha_ContratacionEmpleado" name="Fecha_ContratacionEmpleado" type="date" placeholder="Fecha de Contratación" required />
-                                        <label for="Fecha_ContratacionEmpleado">Fecha de Contratación</label>
+                                        <textarea class="form-control" id="Tratamiento_Enfermedad" name="Tratamiento_Enfermedad" placeholder="Tratamiento de la Enfermedad"></textarea>
+                                        <label for="Tratamiento_Enfermedad">Tratamiento de la Enfermedad</label>
                                     </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="PuestoEmpleado" name="PuestoEmpleado" type="text" placeholder="Puesto" required />
-                                        <label for="PuestoEmpleado">Puesto</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="EmailEmpleado" name="EmailEmpleado" type="email" placeholder="Email" required />
-                                        <label for="EmailEmpleado">Email</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="TelefonoEmpleado" name="TelefonoEmpleado" type="tel" placeholder="Teléfono" required />
-                                        <label for="TelefonoEmpleado">Teléfono</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="Password_Empleado" name="Password_Empleado" type="password" placeholder="Contraseña" required />
-                                        <label for="Password_Empleado">Contraseña</label>
-                                    </div>
-                                    <button class="btn btn-primary" type="submit">Crear Empleado</button>
+                                    <button class="btn btn-primary" type="submit">Crear Enfermedad</button>
                                 </form>
                             </div>
                         </div>
+
+
+
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Detalle empleados registrados
+                                Detalle enfermedades
                             </div>
                             <div class="card-body">
                                 <table id="empleadoTable" class="table table-striped">
@@ -222,11 +209,8 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Fecha de Contratación</th>
-                                            <th>Puesto</th>
-                                            <th>Email</th>
-                                            <th>Teléfono</th>
+                                            <th>Descripcion</th>
+                                            <th>Tratamiento</th>
                                         </tr>
                                     </thead>
                                     <tbody>

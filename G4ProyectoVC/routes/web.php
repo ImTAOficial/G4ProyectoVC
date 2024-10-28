@@ -5,6 +5,9 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\VinedoController;
+use App\Http\Controllers\EnfermedadController;
+use App\Http\Controllers\ParcelaController;
 
 Route::get('/', function () {
     return view('dashboard');
@@ -38,28 +41,33 @@ Route::get('registroempleado', function () {
 // Ruta para crear un empleado
 Route::post('empleado/crear', [EmpleadoController::class, 'store'])->name('empleado.crear');
 
-// Ruta para crear un viñedo
-Route::get('vinedo', function () {
-    return view('vinedo');
-})->name('vinedo');
+// Ruta para mostrar el formulario de viñedo y crear un viñedo
+Route::get('vinedo', [VinedoController::class, 'mostrarFormulario'])->name('vinedo');
+Route::post('vinedo/crear', [VinedoController::class, 'crearVinedo'])->name('vinedo.crear');
 
 // Ruta para crear una enfermedad
-Route::get('enfermedad', function () {
-    return view('enfermedad');
-})->name('enfermedad');
+Route::post('/enfermedad/crear', [EnfermedadController::class, 'crearEnfermedad'])->name('enfermedad.crear');
 
-// Ruta para crear una parcelas
+// Ruta para mostrar el formulario de parcela y crear una parcela
 Route::get('parcelas', function () {
     return view('parcelas');
 })->name('parcelas');
 
-// Ruta para crear una bomba dde agua
+Route::post('parcela/crear', [ParcelaController::class, 'crearParcela'])->name('parcela.crear');
+
+// Otras rutas existentes
+Route::get('enfermedad', function () {
+    return view('enfermedad');
+})->name('enfermedad');
+
+Route::get('parcelas', function () {
+    return view('parcelas');
+})->name('parcelas');
+
 Route::get('bombadeagua', function () {
     return view('bombadeagua');
 })->name('bombadeagua');
 
-// Ruta para crear un sensor
 Route::get('sensores', function () {
     return view('sensores');
 })->name('sensores');
-

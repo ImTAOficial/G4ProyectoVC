@@ -24,8 +24,6 @@
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </form>
-
-
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
@@ -39,10 +37,6 @@
                 </li>
             </ul>
         </nav>
-        
-        
-        
-        
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -59,19 +53,15 @@
                                 Cultivos
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-
-
-<div class="collapse" id="collapseCultivos" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-    <nav class="sb-sidenav-menu-nested nav">
-        <a class="nav-link" href="{{ route('vinedo') }}">Viñedos</a>
-        <a class="nav-link" href="{{ route('enfermedad') }}">Enfermedad</a>
-        <a class="nav-link" href="{{ route('parcelas') }}">Parcelas</a>
-        <a class="nav-link" href="{{ route('bombadeagua') }}">Bomba de Agua</a>
-        <a class="nav-link" href="{{ route('sensores') }}">Sensores</a>
-    </nav>
-</div>
-
-
+                            <div class="collapse" id="collapseCultivos" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{ route('vinedo') }}">Viñedos</a>
+                                    <a class="nav-link" href="{{ route('enfermedad') }}">Enfermedad</a>
+                                    <a class="nav-link" href="{{ route('parcelas') }}">Parcelas</a>
+                                    <a class="nav-link" href="{{ route('bombadeagua') }}">Bomba de Agua</a>
+                                    <a class="nav-link" href="{{ route('sensores') }}">Sensores</a>
+                                </nav>
+                            </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseProcesos" aria-expanded="false" aria-controls="collapseProcesos">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Procesos
@@ -86,7 +76,6 @@
                                     <a class="nav-link" href="layout-static.html">Bodegas</a>
                                 </nav>
                             </div>
-
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseComercial" aria-expanded="false" aria-controls="collapseComercial">
                                 <div class="sb-nav-link-icon"><i class="fas fa-dollar-sign"></i></div>
                                 Comercial
@@ -100,7 +89,6 @@
                                     <a class="nav-link" href="layout-static.html">Datos financieros</a>
                                 </nav>
                             </div>
-
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Empleados
@@ -108,16 +96,11 @@
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-
-                                
                                 <nav class="sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{ route('registroempleado') }}">
                                         Registro de empleado
                                     </a>
-                                </nav>
-
-
-                                    
+                                </nav>  
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                                         Authentication
                                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>

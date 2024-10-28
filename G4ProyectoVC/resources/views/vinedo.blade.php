@@ -157,76 +157,96 @@
                             <a href="{{ route('dashboard') }}" class="btn btn-primary mt-4">Regresar</a>
                         </div>
                     </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-user-tie me-1"></i>
-                                Formulario viñedo
-                            </div>
-                            <div class="card-body">
-                                @if(session('success'))
-                                    <div class="alert alert-success">
-                                        {{ session('success') }}
-                                    </div>
-                                @endif
-                                @if($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                @endif
-                                <form method="POST" action="{{ route('empleado.crear') }}">
-                                    @csrf
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="NombreEmpleado" name="NombreEmpleado" type="text" placeholder="Nombre" required />
-                                        <label for="NombreEmpleado">Nombre</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="ApellidoEmpleado" name="ApellidoEmpleado" type="text" placeholder="Apellido" required />
-                                        <label for="ApellidoEmpleado">Apellido</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="Fecha_ContratacionEmpleado" name="Fecha_ContratacionEmpleado" type="date" placeholder="Fecha de Contratación" required />
-                                        <label for="Fecha_ContratacionEmpleado">Fecha de Contratación</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="PuestoEmpleado" name="PuestoEmpleado" type="text" placeholder="Puesto" required />
-                                        <label for="PuestoEmpleado">Puesto</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="EmailEmpleado" name="EmailEmpleado" type="email" placeholder="Email" required />
-                                        <label for="EmailEmpleado">Email</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="TelefonoEmpleado" name="TelefonoEmpleado" type="tel" placeholder="Teléfono" required />
-                                        <label for="TelefonoEmpleado">Teléfono</label>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="Password_Empleado" name="Password_Empleado" type="password" placeholder="Contraseña" required />
-                                        <label for="Password_Empleado">Contraseña</label>
-                                    </div>
-                                    <button class="btn btn-primary" type="submit">Crear Empleado</button>
-                                </form>
-                            </div>
+                     
+                    
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-leaf me-1"></i>
+                            Formulario viñedo
                         </div>
+                        <div class="card-body">
+                            @if(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+                            @if($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            <form method="POST" action="{{ route('vinedo.crear') }}">
+                                @csrf
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="NombreVinedo" name="NombreVinedo" type="text" placeholder="Nombre del Viñedo" required />
+                                    <label for="NombreVinedo">Nombre del Viñedo</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="Variedad_Uva" name="Variedad_Uva" type="text" placeholder="Variedad de Uva" required />
+                                    <label for="Variedad_Uva">Variedad de Uva</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="Fecha_Plantacion" name="Fecha_Plantacion" type="date" placeholder="Fecha de Plantación" required />
+                                    <label for="Fecha_Plantacion">Fecha de Plantación</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="RiegoVinedo" name="RiegoVinedo" type="number" placeholder="Riego del Viñedo" required />
+                                    <label for="RiegoVinedo">Riego del Viñedo</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-control" id="ID_Enfermedad" name="ID_Enfermedad[]" multiple>
+                                        @foreach($enfermedades as $enfermedad)
+                                            <option value="{{ $enfermedad->ID_Enfermedad }}">{{ $enfermedad->Nombre_Enfermedad }}</option>
+                                        @endforeach
+                                    </select>
+                                    <label for="ID_Enfermedad">Enfermedad</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="Estado_Sanitario" name="Estado_Sanitario" type="text" placeholder="Estado Sanitario" required />
+                                    <label for="Estado_Sanitario">Estado Sanitario</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="Azucar_Uva" name="Azucar_Uva" type="number" step="0.01" placeholder="Azúcar de Uva" required />
+                                    <label for="Azucar_Uva">Azúcar de Uva</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="Punto_Optimo_Cosecha" name="Punto_Optimo_Cosecha" type="date" placeholder="Punto Óptimo de Cosecha" required />
+                                    <label for="Punto_Optimo_Cosecha">Fecha de punto óptimo de cosecha</label>
+                                </div>
+                                <button class="btn btn-primary" type="submit">Crear Viñedo</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Detalle empleados registrados
+                                Detalle Viñedos
                             </div>
                             <div class="card-body">
                                 <table id="empleadoTable" class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Nombre</th>
-                                            <th>Apellido</th>
-                                            <th>Fecha de Contratación</th>
-                                            <th>Puesto</th>
-                                            <th>Email</th>
-                                            <th>Teléfono</th>
+                                            <th>ID de Parcela</th>
+                                            <th>NombNombre del viñedo</th>
+                                            <th>Variedad de Uva</th>
+                                            <th>Fecha de plantacion</th>
+                                            <th>Riego del viñedo</th>
+                                            <th>ID Enfermedad</th>
+                                            <th>Estado sanitario</th>
+                                            <th>Azucar de uva</th>
+                                            <th>Punto optimo de coseña</th>
                                         </tr>
                                     </thead>
                                     <tbody>
